@@ -119,7 +119,7 @@ const Dashboard = () => {
 
   const fetchSummary = async () => {
     try {
-      const txs = await axios.get("http://localhost:5000/api/transactions", {
+      const txs = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/transactions`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -129,7 +129,7 @@ const Dashboard = () => {
       );
       setSummary({ expense });
 
-      const res = await axios.get("http://localhost:5000/api/budget", {
+      const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/budget`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
