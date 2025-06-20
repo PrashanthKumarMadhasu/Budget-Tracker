@@ -128,7 +128,7 @@ const Transactions = ({ refreshSummary }) => {
 
   const fetchTxs = async () => {
     const params = { ...filter, page };
-    const res = await axios.get("http://localhost:5000/api/transactions", {
+    const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/transactions`, {
       headers: { Authorization: `Bearer ${token}` },
       params,
     });
@@ -142,7 +142,7 @@ const Transactions = ({ refreshSummary }) => {
   }, [page, filter]);
 
   const deleteTx = async (id) => {
-    await axios.delete(`http://localhost:5000/api/transactions/${id}`, {
+    await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/transactions/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     fetchTxs();

@@ -150,7 +150,7 @@ const Dashboard = () => {
 
   const updateBudget = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/budget", budget, {
+      const res = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/budget`, budget, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setBudget(res.data);

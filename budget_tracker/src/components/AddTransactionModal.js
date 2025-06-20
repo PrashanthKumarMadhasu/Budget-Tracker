@@ -51,11 +51,11 @@ const AddTransactionModal = ({ onClose, onAdd, editTx }) => {
 
     try {
       if (editTx) {
-        await axios.put(`http://localhost:5000/api/transactions/${editTx._id}`, data, {
+        await axios.put(`${process.env.REACT_APP_API_BASE_URL}/transactions/${editTx._id}`, data, {
           headers: { Authorization: `Bearer ${token}` },
         });
       } else {
-        await axios.post('http://localhost:5000/api/transactions', data, {
+        await axios.post(`${process.env.REACT_APP_API_BASE_URL}/transactions`, data, {
           headers: { Authorization: `Bearer ${token}` },
         });
       }
