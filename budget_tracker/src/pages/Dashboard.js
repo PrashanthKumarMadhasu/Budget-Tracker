@@ -177,10 +177,10 @@ const Dashboard = () => {
           <Row>
             <Box>
               <Header>Summary</Header>
-              <p>Total Income: ₹ {income}</p>
-              <p>Total Expense: ₹ {expense}</p>
+              <p><span style={{color:"blue"}}>Total Income:</span> ₹ {income}</p>
+              <p><span style={{color:"blue"}}>Total Expense:</span> ₹ {expense}</p>
               <hr></hr>
-              <p>Balance: ₹ {balance}</p>
+              <p><span style={{color:"rgb(4, 55, 65)"}}>Balance: </span><span style={{color:"rgb(145, 131, 7)"}}>₹</span>  <span style={{color:"rgb(8, 63, 3)"}}>{balance}</span></p>
             </Box>
             <Box>
               <Header>Set Budget</Header>
@@ -192,11 +192,10 @@ const Dashboard = () => {
                   gap: "10px",
                 }}
               >
-                <label htmlFor="salary">income: </label>
+                <label htmlFor="salary" style={{color:"blue"}}>income: </label>
                 <input
                   id="salary"
                   type="number"
-                  placeholder="Salary"
                   value={budget.salary}
                   onChange={(e) =>
                     setBudget({ ...budget, salary: e.target.value })
@@ -219,11 +218,10 @@ const Dashboard = () => {
                   gap: "10px",
                 }}
               >
-                <label for="budget">budget:  </label>
+                <label for="budget" style={{color:"blue"}}>budget:  </label>
                 <input
                   id="budget"
                   type="number"
-                  placeholder="Estimated Budget"
                   value={budget.estimatedBudget}
                   onChange={(e) =>
                     setBudget({ ...budget, estimatedBudget: e.target.value })
@@ -243,7 +241,7 @@ const Dashboard = () => {
             </Box>
           </Row>
           <Box style={{ margin: "0 1rem" }}>
-            <Header>Budget vs Expenses</Header>
+            <Header>Budget vs Expense</Header>
             <Chart
               salary={income}
               estimated={budget.estimatedBudget}
