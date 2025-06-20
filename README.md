@@ -43,17 +43,26 @@ A full-stack web application to help users manage their monthly income, expenses
 
 ---
 📋 API Endpoints
+
 Method	Endpoint	Description
+
 POST	/api/auth/login	User login
+
 GET	/api/transactions	Get all user transactions (filter, pagination supported)
+
 POST	/api/transactions	Add a new transaction
+
 PUT	/api/transactions/:id	Edit a transaction
+
 DELETE	/api/transactions/:id	Delete a transaction
+
 GET	/api/budget	Get user's budget
+
 POST	/api/budget	Set/update budget
 
 ---
 🤖 Acknowledgements
+
 ChatGPT by OpenAI (for code assistance and structuring)
 
 D3.js (data visualization)
